@@ -41,7 +41,7 @@ Here's an overview of everything in Jingle sorted by the GUI tabs they can be fo
 
 - "A log is a file or record containing information about activities in a computer system" -lenovo.com
 - Each log line can come from Jingle itself, a plugin, or a script.
-- `Upload Log` will upload the latest.log file to [MCLogs](https://mclogs.org/) and copy the URL to your clipboard.
+- `Upload Log` will upload the latest.log file to [MCLogs](https://mclo.gs/) and copy the URL to your clipboard.
 - Select `Show Debug Logs` to see even more spam. Unlike Julti, this will show debug logs from the past as well!
 
 ### Hotkeys
