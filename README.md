@@ -8,7 +8,7 @@
 
 - **本项目地址**：[Github](https://github.com/TowardStars/Jingle-zh_CN)、[Gitee]()
 
-- **汉化版下载**：[通过Github下载](https://github.com/TowardStars/Jingle-zh_CN/releases/latest)、[国内推荐通过Gitee下载](https://gitee.com/TowardStars/Jingle-zh_CN/releases/latest)
+- **汉化版下载**：[通过Github下载](https://github.com/TowardStars/Jingle-zh_CN/releases/latest)、[国内推荐通过Gitee下载](https://gitee.com/towardstars/jingle-zh_cn/releases/latest)
 
 ### 📌 项目简介
 
