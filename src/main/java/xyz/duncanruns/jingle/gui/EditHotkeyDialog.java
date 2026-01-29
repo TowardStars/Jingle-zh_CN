@@ -43,7 +43,7 @@ public class EditHotkeyDialog extends JDialog {
         this.setModal(true);
         this.setModalityType(ModalityType.APPLICATION_MODAL);
         this.getRootPane().setDefaultButton(this.buttonOK);
-        this.setTitle("Jingle: Edit Hotkey");
+        this.setTitle("Jingle: 修改快捷键");  // 汉化
 
         this.buttonOK.addActionListener(e -> EditHotkeyDialog.this.onOK());
 
@@ -69,7 +69,7 @@ public class EditHotkeyDialog extends JDialog {
         this.selectedActionBox.setModel(new DefaultComboBoxModel<>(new Vector<>(Hotkey.getHotkeyActions())));
         this.selectedActionBox.setSelectedItem(new Hotkey.HotkeyTypeAndAction(this.type, this.action));
         this.keyButton.setText(Hotkey.formatKeys(this.keys));
-        if (this.keyButton.getText().isEmpty()) this.keyButton.setText("Set Hotkey Here...");
+        if (this.keyButton.getText().isEmpty()) this.keyButton.setText("点击此处设置快捷键……");
         this.keyButton.addActionListener(a -> {
             synchronized (this) {
                 this.keyButton.setText("...");
@@ -78,7 +78,7 @@ public class EditHotkeyDialog extends JDialog {
                     synchronized (this) {
                         this.keys = hotkey.getKeys();
                         this.keyButton.setText(Hotkey.formatKeys(this.keys));
-                        if (this.keyButton.getText().isEmpty()) this.keyButton.setText("Set Hotkey Here...");
+                        if (this.keyButton.getText().isEmpty()) this.keyButton.setText("点击此处设置快捷键……");
                         this.keyButton.setEnabled(true);
                         this.pack();
                     }
@@ -121,16 +121,16 @@ public class EditHotkeyDialog extends JDialog {
         panel2.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1, true, false));
         panel1.add(panel2, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         buttonOK = new JButton();
-        buttonOK.setText("OK");
+        buttonOK.setText("确认");
         panel2.add(buttonOK, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         buttonCancel = new JButton();
-        buttonCancel.setText("Cancel");
+        buttonCancel.setText("取消");
         panel2.add(buttonCancel, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new GridLayoutManager(3, 1, new Insets(0, 0, 0, 0), -1, -1));
         contentPane.add(panel3, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         imBox = new JCheckBox();
-        imBox.setText("Ignore Extra Modifier Keys (Ctrl, Alt, Shift)");
+        imBox.setText("忽略额外修饰键（Ctrl、Alt、Shift）");
         panel3.add(imBox, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         selectedActionBox = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();

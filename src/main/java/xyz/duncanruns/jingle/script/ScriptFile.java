@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.nio.charset.StandardCharsets;  // 指定utf8读文件
 
 public class ScriptFile {
     public final String contents;
@@ -37,7 +38,7 @@ public class ScriptFile {
                     // Remove .lua for resource loaded script
                     contents.substring(0, contents.length() - 4),
                     // Read the contents of the resource stream to get lua script contents
-                    IOUtils.toString(stream, Charset.defaultCharset()),
+                    IOUtils.toString(stream, StandardCharsets.UTF_8),
                     false
             );
         }

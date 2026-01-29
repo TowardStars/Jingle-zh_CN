@@ -88,19 +88,19 @@ function run_minimize()
 end
 
 function customize()
-    jingle.addCustomizationMenuText("Allowed states for 'Safe Reset' and 'Reset Before 20s':")
-    jingle.addCustomizationMenuCheckBox("iwu", true, "In World, Unpaused")
-    jingle.addCustomizationMenuCheckBox("iwp", true, "In World, Paused")
-    jingle.addCustomizationMenuCheckBox("iwgso", false, "In World, Inventory/Chat Open")
-    jingle.addCustomizationMenuCheckBox("t", false, "Title Screen")
-    jingle.addCustomizationMenuCheckBox("p", false, "Previewing World")
+    jingle.addCustomizationMenuText("允许“安全重置”和“20秒内重置”按键的游戏场景：")  --汉化
+    jingle.addCustomizationMenuCheckBox("iwu", true, "存档中未暂停游戏")  --汉化
+    jingle.addCustomizationMenuCheckBox("iwp", true, "存档中暂停游戏")  --汉化
+    jingle.addCustomizationMenuCheckBox("iwgso", false, "存档中打开背包/聊天栏")  --汉化
+    jingle.addCustomizationMenuCheckBox("t", false, "标题界面")  --汉化
+    jingle.addCustomizationMenuCheckBox("p", false, "预览世界")  --汉化
     jingle.showCustomizationMenu()
 end
 
-jingle.addHotkey("Clear Worlds", run_clear_worlds)
+jingle.addHotkey("清理存档", run_clear_worlds)  --汉化
 jingle.listen("ENTER_WORLD", save_enter_world_time)
-jingle.addHotkey("Safe Reset", run_safe_reset)
-jingle.addHotkey("Reset Before 20s", run_reset_before_20s)
-jingle.addHotkey("Start Coping", run_start_coping)
-jingle.addHotkey("Minimize Instance", run_minimize)
+jingle.addHotkey("安全重置", run_safe_reset)  --汉化
+jingle.addHotkey("20秒内重置", run_reset_before_20s)  --汉化
+jingle.addHotkey("开启旁观", run_start_coping)  --汉化
+jingle.addHotkey("最小化实例", run_minimize)  --汉化
 jingle.setCustomization(customize)

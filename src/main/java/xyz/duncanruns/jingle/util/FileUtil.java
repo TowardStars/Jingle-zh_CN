@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;  // 让读写文件指定utf8编码
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,13 +17,14 @@ public final class FileUtil {
     }
 
     public static void writeString(Path path, String string) throws IOException {
-        FileWriter writer = new FileWriter(path.toFile());
-        writer.write(string);
-        writer.close();
+        // 指定 StandardCharsets.UTF_8 确保编码统一
+        Files.write(path, string.getBytes(StandardCharsets.UTF_8));
     }
 
     public static String readString(Path path) throws IOException {
-        return new String(Files.readAllBytes(path));
+        // 然后通过 String 构造函数指定 UTF-8 编码
+        byte[] bytes = Files.readAllBytes(path);
+        return new String(bytes, StandardCharsets.UTF_8);
     }
 
     public static JsonObject readJson(Path path) throws IOException, JsonSyntaxException {

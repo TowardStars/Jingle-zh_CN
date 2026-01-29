@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
 import static xyz.duncanruns.jingle.util.SleepUtil.sleep;
 
 public final class Jingle {
-    public static final Path FOLDER = Paths.get(System.getProperty("user.home")).resolve(".config").resolve("Jingle").toAbsolutePath();
+    public static final Path FOLDER = Paths.get(System.getProperty("user.home")).resolve(".config").resolve("Jingle-zh_CN").toAbsolutePath();
     public static final String VERSION = Optional.ofNullable(Jingle.class.getPackage().getImplementationVersion()).orElse("DEV");
     public static final Logger LOGGER = LogManager.getLogger("Jingle");
 

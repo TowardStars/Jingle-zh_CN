@@ -30,7 +30,7 @@ class CustomizationMenu extends JDialog {
     public CustomizationMenu(JingleLuaLibrary library, List<Element> elements) {
         super(JingleGUI.get());
         assert library.script != null;
-        this.setTitle("Jingle Script: " + library.script.name);
+        this.setTitle("Jingle 脚本: " + library.script.name);  // 汉化
         this.setContentPane(this.contentPane);
         this.setModal(true);
         this.getRootPane().setDefaultButton(this.okButton);
@@ -141,10 +141,10 @@ class CustomizationMenu extends JDialog {
         panel2.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1, true, false));
         panel1.add(panel2, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         okButton = new JButton();
-        okButton.setText("OK");
+        okButton.setText("确认");
         panel2.add(okButton, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         cancelButton = new JButton();
-        cancelButton.setText("Cancel");
+        cancelButton.setText("取消");
         panel2.add(cancelButton, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         mainPanel = new JPanel();
         mainPanel.setLayout(new GridBagLayout());

@@ -86,20 +86,20 @@ public class HotkeyListPanel extends JPanel {
             if (hasInvalidHotkeys) {
                 constraints.gridy = 0;
                 constraints.gridwidth = 4;
-                JLabel warningLabel = new JLabel("Warning: some of your hotkeys have an invalid action");
+                JLabel warningLabel = new JLabel("警告：部分快捷键已失效，请修改或移除后重新添加");  // 汉化
                 warningLabel.setForeground(new Color(255, 0, 0));
                 this.add(warningLabel, constraints.clone());
                 constraints.gridwidth = 1;
             }
             constraints.gridy = 1;
-            this.add(new JLabel("Action"), constraints.clone());
-            this.add(new JLabel("Hotkey"), constraints.clone());
+            this.add(new JLabel("行为"), constraints.clone());
+            this.add(new JLabel("快捷键"), constraints.clone());
         }
         this.revalidate();
     }
 
     private JButton getRemoveButton(SavedHotkey hotkey) {
-        JButton removeButton = new JButton("Remove");
+        JButton removeButton = new JButton("移除");
         removeButton.addActionListener(a -> {
             synchronized (Jingle.class) {
                 Jingle.options.setSavedHotkeys(Jingle.options.copySavedHotkeys().stream().filter(h -> !h.equals(hotkey)).collect(Collectors.toList()));
@@ -112,7 +112,7 @@ public class HotkeyListPanel extends JPanel {
     }
 
     private JButton getEditButton(SavedHotkey hotkey) {
-        JButton editButton = new JButton("Edit");
+        JButton editButton = new JButton("修改");
         editButton.addActionListener(a -> {
             synchronized (Jingle.class) {
                 EditHotkeyDialog dialog = new EditHotkeyDialog(this.owner, hotkey.action, hotkey.type, hotkey.keys, hotkey.ignoreModifiers);

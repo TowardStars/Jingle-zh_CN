@@ -6,19 +6,19 @@ function script_description()
     return
     [[
     <h1>Jingle OBS Link</h1>
-    <p>Links OBS to Jingle.</p>
-    <p>Do not remove this script if you want automatic scene switching and projector opening.</p>
-    <h2>Press "Regenerate with 'Game Capture'" if you use Minecraft's built-in fullscreen. Otherwise use Window Capture.</h2>
-    ]]
+    <p>链接OBS与Jingle.</p>
+    <p>如果您想要自动切换场景和打开场景投影，请不要删除此脚本。</p>
+    <h2>如果您使用 Minecraft 的内置全屏模式，请点击“使用‘游戏采集生成’场景”，否则请点击“使用‘窗口采集’生成场景‘。（译者注：窗口游戏与无边框玩家随便选）</h2>
+    ]]  --汉化
 end
 
 function script_properties()
     local props = obs.obs_properties_create()
 
     obs.obs_properties_add_button(
-        props, "regenerate_gc_button", "Regenerate With 'Game Capture'", regenerate_gc)
+        props, "regenerate_gc_button", "使用‘游戏采集生成’场景", regenerate_gc)
     obs.obs_properties_add_button(
-        props, "regenerate_wc_button", "Regenerate With 'Window Capture'", regenerate_wc)
+        props, "regenerate_wc_button", "使用‘窗口采集’生成场景", regenerate_wc)
 
     return props
 end

@@ -123,16 +123,16 @@ function check_undo_dirties()
 end
 
 function customize()
-    jingle.addCustomizationMenuCheckBox("undo_resize_on_reset", true, "Undo Resizing after Reset")
+    jingle.addCustomizationMenuCheckBox("undo_resize_on_reset", true, "重置世界后将窗口调节为正常大小")  --汉化
     jingle.addCustomizationMenuText(" ")
-    jingle.addCustomizationMenuText("Enter your eye measuring size:")
+    jingle.addCustomizationMenuText("输入您测眼宏的游戏窗口分辨率：")  --汉化
     jingle.addCustomizationMenuTextField("eye_measuring", "384x16384", is_size_string)
-    jingle.addCustomizationMenuCheckBox("change_cursor_speed", false, "Change Cursor Speed to 1 when Measuring")
+    jingle.addCustomizationMenuCheckBox("change_cursor_speed", false, "测眼时将系统指针速度调整为1")  --汉化
     jingle.addCustomizationMenuText(" ")
-    jingle.addCustomizationMenuText("Enter your thin bt size:")
+    jingle.addCustomizationMenuText("输入您的宝藏宏的窗口大小：")  --汉化
     jingle.addCustomizationMenuTextField("thin_bt", "280x1000", is_size_string)
     jingle.addCustomizationMenuText(" ")
-    jingle.addCustomizationMenuText("Enter your planar abuse size:")
+    jingle.addCustomizationMenuText("输入您除雾宏的窗口大小：")  --汉化
     jingle.addCustomizationMenuTextField("planar_abuse", "1920x300", is_size_string)
 
     if not jingle.showCustomizationMenu() then
@@ -145,8 +145,8 @@ function customize()
     end
 
     local current_cursor_speed = tostring(jingle.getCursorSpeed())
-    local ans = jingle.askYesNo("Always revert cursor speed to " ..
-            current_cursor_speed .. " after undoing eye measuring? (Otherwise revert to the speed from before measuring)")
+    local ans = jingle.askYesNo("测眼结束后始终将系统指针灵敏度恢复至" ..
+            current_cursor_speed .. "吗？ （选“否”将会在测眼结束后将系统指针灵敏度恢复至测眼前的灵敏度）")
     if ans ~= nil then
         if ans then
             jingle.setCustomizable("permanent_normal_cursor_speed", current_cursor_speed)
@@ -158,8 +158,8 @@ function customize()
     reload();
 end
 
-jingle.addHotkey("Thin BT", run_thin_bt)
-jingle.addHotkey("Planar Abuse", run_planar_abuse)
-jingle.addHotkey("Eye Measuring", run_eye_measuring)
+jingle.addHotkey("宝藏宏", run_thin_bt)  --汉化
+jingle.addHotkey("除雾宏", run_planar_abuse)  --汉化
+jingle.addHotkey("测眼宏", run_eye_measuring)  --汉化
 jingle.listen("EXIT_WORLD", on_exit_world)
 jingle.setCustomization(customize)

@@ -47,7 +47,7 @@ public class JingleOptions {
     public List<JsonObject> hotkeys = new ArrayList<>();
 
     // Script
-    public Set<String> disabledScripts = new HashSet<>(Collections.singletonList("Coop Mode"));
+    public Set<String> disabledScripts = new HashSet<>(Collections.singletonList("合作模式"));
 
     // Application
     public boolean checkForUpdates = true;

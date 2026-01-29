@@ -12,7 +12,7 @@ function check_should_run()
 end
 
 function customize()
-    local ans = jingle.askYesNo("Should cheats be enabled when opening to lan?")
+    local ans = jingle.askYesNo("对局域网开放时是否开启作弊？")  --汉化
     if ans ~= nil then
         jingle.setCustomizable("cheats_enabled", ans and "true" or "false")
     end

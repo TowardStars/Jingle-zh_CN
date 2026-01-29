@@ -25,14 +25,14 @@ public class ScriptListPanel extends JPanel {
 
     private static JButton getCustomizeButton(ScriptFile loadedScript) {
         Optional<Runnable> customizationFunction = ScriptStuff.getCustomizationFunction(loadedScript.name);
-        JButton customizeButton = new JButton("Customize");
+        JButton customizeButton = new JButton("自定义");  // 汉化
         customizeButton.setEnabled(customizationFunction.isPresent());
         customizeButton.addActionListener(e -> customizationFunction.get().run());
         return customizeButton;
     }
 
     private static JButton getMoreButton(ScriptFile loadedScript) {
-        JButton moreButton = new JButton("More...");
+        JButton moreButton = new JButton("更多……");  // 汉化
         Optional<Map<String, Runnable>> extraFunctions;
         synchronized (Jingle.class) {
             extraFunctions = ScriptStuff.getExtraFunctions(loadedScript.getName());
@@ -86,7 +86,7 @@ public class ScriptListPanel extends JPanel {
         synchronized (Jingle.class) {
             isDisabled = Jingle.options.disabledScripts.contains(loadedScript.name);
         }
-        JButton toggleButton = new JButton(isDisabled ? "Enable" : "Disable");
+        JButton toggleButton = new JButton(isDisabled ? "开启" : "关闭");  // 汉化
         toggleButton.addActionListener(a -> {
             synchronized (Jingle.class) {
                 if (isDisabled) {

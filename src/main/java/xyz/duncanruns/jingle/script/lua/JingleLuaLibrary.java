@@ -123,7 +123,7 @@ class JingleLuaLibrary extends LuaLibrary {
     @Nullable
     public Boolean askYesNo(String message) {
         assert this.script != null;
-        int ans = JOptionPane.showConfirmDialog(JingleGUI.get(), message, "Jingle Script: " + this.script.getName(), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
+        int ans = JOptionPane.showConfirmDialog(JingleGUI.get(), message, "Jingle 脚本: " + this.script.getName(), JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
         switch (ans) {
             case 0:
                 return true;
@@ -137,7 +137,7 @@ class JingleLuaLibrary extends LuaLibrary {
     @LuaDocumentation(description = "Shows a message in a message box to the user.")
     public void showMessageBox(String message) {
         assert this.script != null;
-        JOptionPane.showMessageDialog(JingleGUI.get(), message, "Jingle Script: " + this.script.getName(), JOptionPane.PLAIN_MESSAGE, null);
+        JOptionPane.showMessageDialog(JingleGUI.get(), message, "Jingle 脚本: " + this.script.getName(), JOptionPane.PLAIN_MESSAGE, null);  // 汉化
     }
 
     @LuaDocumentation(description = "Presents the user with a text input box and returns the string entered, or nil if they cancel/close the prompt without pressing Ok.", returnTypes = "string|nil", paramTypes = {"string", "string|nil", "(fun(input: string): boolean)|nil"})
@@ -146,7 +146,7 @@ class JingleLuaLibrary extends LuaLibrary {
         boolean invalidInput = false;
         assert this.script != null;
         while (true) {
-            Object o = JOptionPane.showInputDialog(JingleGUI.get(), invalidInput ? "Your input was invalid!\n" + message : message, "Jingle Script: " + this.script.getName(), JOptionPane.PLAIN_MESSAGE, null, null, Optional.ofNullable(startingVal).orElse(""));
+            Object o = JOptionPane.showInputDialog(JingleGUI.get(), invalidInput ? "Your input was invalid!\n" + message : message, "Jingle 脚本: " + this.script.getName(), JOptionPane.PLAIN_MESSAGE, null, null, Optional.ofNullable(startingVal).orElse(""));  // 汉化
             if (o == null) {
                 return null;
             }
