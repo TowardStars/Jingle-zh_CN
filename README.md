@@ -6,9 +6,9 @@
 
 - **原项目地址**：[DuncanRuns/Jingle](https://github.com/DuncanRuns/Jingle)
 
-- **本项目地址**：[Github](https://github.com/TowardStars/Jingle-zh_CN)、[Gitee]()
+- **本项目地址**：[Github](https://github.com/towardStars/jingle-zh_CN)、[Gitee](https://gitee.com/towardstars/jingle-zh_cn)
 
-- **汉化版下载**：[通过Github下载](https://github.com/TowardStars/Jingle-zh_CN/releases/latest)、[国内推荐通过Gitee下载](https://gitee.com/towardstars/jingle-zh_cn/releases/latest)
+- **汉化版下载**：[通过Github下载](https://github.com/TowardStars/jingle-zh_CN/releases/latest)、[国内推荐通过Gitee下载](https://gitee.com/towardstars/jingle-zh_cn/releases/latest)
 
 ### 📌 项目简介
 
