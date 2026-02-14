@@ -628,7 +628,7 @@ public class JingleGUI extends JFrame {
         customizeBorderlessButton.setText("自定义无边框");
         panel2.add(customizeBorderlessButton, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         autoBorderlessCheckBox = new JCheckBox();
-        autoBorderlessCheckBox.setText("示例启动后自动无边框");
+        autoBorderlessCheckBox.setText("实例启动后自动无边框");
         panel2.add(autoBorderlessCheckBox, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         logJPanel = new JPanel();
         logJPanel.setLayout(new GridLayoutManager(2, 3, new Insets(5, 5, 5, 5), -1, -1));
